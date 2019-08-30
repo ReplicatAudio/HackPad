@@ -11,7 +11,11 @@ pip install playsound
 ```
 **NOTE**: ```keyboard``` and ```playsound``` are technically optional, but they are required if you want to make use of the ```core_functions``` included with this software.
 ## Usage
-### ```layout.py```
+Run with:
+```bash
+python launchboard.py
+```
+### ```user/layout.py```
 This file contains the "layout data" for your launchpad. This is where you can setup pad colors and functions. Think of each entry here as an "action" that can be assigned to the launchpad.
 ```python
 layout.append({
@@ -43,7 +47,7 @@ Not all of the data is required. For instance a pad can have only a release func
 	'g': #REQUIRED
 	'b': #REQUIRED
 ```
-There are some core functions provided by this software that can help you get started with writing your own custom layouts. These are basically just wrappers around the ```keyboard``` and ```playsound``` library. You can check them out simply by browind the ```core_functions.py``` file. 
+There are some core functions provided by this software that can help you get started with writing your own custom layouts. These are basically just wrappers around the ```keyboard``` and ```playsound``` library. You can check them out simply by browsing the ```core/functions.py``` file. 
 
-### ```user_functions.py```
-User functions allow you to add in your own custom functions using any python packages that you would like. There is a simple example in that file to get you started and the last "action" in ```layout.py``` shows how you can assign a user function to the layout.
+### ```user/functions.py```
+User functions allow you to add in your own custom functions using any python packages that you would like. There is a simple example in that file to get you started and the last "action" in ```user/layout.py``` shows how you can assign a user function to the layout.

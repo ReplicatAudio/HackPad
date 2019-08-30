@@ -1,5 +1,5 @@
-import core_functions as cf
-import user_functions as uf
+import core.functions as cf
+import user.functions as uf
 
 layout = []
 

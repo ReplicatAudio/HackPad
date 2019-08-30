@@ -12,7 +12,7 @@ import random
 import pygame
 from pygame import time
 
-from layout import layout
+from user.layout import layout
 
 import threading
 import time
