@@ -11,11 +11,12 @@ except ImportError:
 import random
 import pygame
 from pygame import time
-
-from user.layout import layout
-
 import threading
 import time
+
+#from layout import layout, layout_highlight_color
+from layout import imported_layout
+layout = imported_layout.layout
 
 def main():
 	lp = launchpad.LaunchpadMk2()
@@ -52,11 +53,11 @@ def releaseFunction(lp,but):
 		if([pad['x'],pad['y']]==[but[0],but[1]]):
 			print("Running ",pad['name'],"released.")
 			try:
-				thread = threading.Thread(target=pad['release'], args=[pad['r_arg']])
+				thread = threading.Thread(target=pad['release'], args=[lp,pad['r_arg'],])
 				thread.start()
 			except KeyError:
 				try:
-					thread = threading.Thread(target=pad['press'], args=())
+					thread = threading.Thread(target=pad['release'], args=(lp,))
 					thread.start()
 				except KeyError:
 					print("Warning: Can not run this pad's (",pad['name'],") release function. Maybe it doesn't even have one...")
@@ -69,11 +70,11 @@ def pressedFunctions(lp,pressed):
 			if([pad['x'],pad['y']]==[pressed[i][0],pressed[i][1]]):
 				print("Running ",pad['name'],"pressed.")
 				try:
-					thread = threading.Thread(target=pad['press'], args=[pad['p_arg']])
+					thread = threading.Thread(target=pad['press'], args=[lp,pad['p_arg'],])
 					thread.start()
 				except KeyError:
 					try:
-						thread = threading.Thread(target=pad['press'], args=())
+						thread = threading.Thread(target=pad['press'], args=(lp,))
 						thread.start()
 					except KeyError:
 						print("Warning: Can not run this pad's (",pad['name'],") press function. Maybe it doesn't even have one...")
@@ -102,9 +103,21 @@ def setLayout(lp):
 
 def highlightPressed(lp,but):
 	#print(" event: ", but )
-	hc = [80,80,80] #highlight color
+	try:
+		hc = imported_layout.highlight_color
+	except AttributeError:
+		hc = [80,80,80]
+	try:
+		highlight_empty = imported_layout.highlight_empty
+	except AttributeError:
+		highlight_empty = True
 	if(but[2]==127):
-		lp.LedCtrlXY(but[0],but[1],hc[0],hc[1],hc[2])
+		inLayout = False
+		for pad in layout:
+			if([pad['x'],pad['y']]==[but[0],but[1]]):
+				inLayout = True
+		if(inLayout == True or highlight_empty == True):
+			lp.LedCtrlXY(but[0],but[1],hc[0],hc[1],hc[2])
 	else:
 		inLayout = False
 		for pad in layout:
@@ -113,6 +126,3 @@ def highlightPressed(lp,but):
 				lp.LedCtrlXY(but[0],but[1],pad['r'],pad['g'],pad['b'])
 		if(inLayout==False):	
 			lp.LedCtrlXY(but[0],but[1],0,0,0)
-
-if __name__ == '__main__':
-	main()
