@@ -1,5 +1,5 @@
 # HackPad
-Use your Novation Launchpad for whatever you can imagine. This essentially turns your device into a 9x9 RGB macro keyboard.
+Allows you to easily "hack" your Novation Launchpad and use it for whatever you can imagine. This essentially turns your device into a 9x9 RGB macro keyboard.
 
 **README NEEDS UPDATE**
 
