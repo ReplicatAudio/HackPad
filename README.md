@@ -1,5 +1,5 @@
 # LaunchBoard.py
-Use your Novation Launchpad for whatever you can imagine. 
+Use your Novation Launchpad for whatever you can imagine. This essentially turns your device into a 9x9 RGB macro keyboard.
 
 Based on [```launchpad_py```](https://github.com/FMMT666/launchpad.py) so this should cover any model available (in theory) but I only have access to an mkII. 
 
