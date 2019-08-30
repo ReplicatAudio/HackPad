@@ -30,15 +30,15 @@ This is where you can setup pad colors and functions. Think of each entry here a
 layout.append({
     'name':'A Key', # The "friendly" name of the action. Used only for CLI output. 
     'oneShot':False, #Should the action be looped as long as the pad is pressed (False) or just run one time (True)?
-	'press':cf.key_press, #The function that should be called when the pad is pressed. This calls 'core_functions.key_press' but it can be any function you want.
-	'release':cf.key_release, #The function that should be called when the pad is released. This calls 'core_functions.key_release' but it can be any function you want
-	'p_arg':'a', #The argument(s) that should be passed to the press function. Use an array for multiple values. We are pressing the 'a' key here.
-	'r_arg':'a', #The argument(s) that should be passed to the press function. Use an array for multiple values. We are releasing the 'a' key here.
-	'x':0, #The x coordinate of the pad we are assigning this function to.
-	'y':8, #The y coordinate of the pad we are assigning this function to.
-	'r':256, # The red RGB value of the pad.
-	'g':0, # The green RGB value of the pad.
-	'b':0 # The blue RGB value of the pad.
+    'press':cf.key_press, #The function that should be called when the pad is pressed. This calls 'core_functions.key_press' but it can be any function you want.
+    'release':cf.key_release, #The function that should be called when the pad is released. This calls 'core_functions.key_release' but it can be any function you want
+    'p_arg':'a', #The argument(s) that should be passed to the press function. Use an array for multiple values. We are pressing the 'a' key here.
+    'r_arg':'a', #The argument(s) that should be passed to the press function. Use an array for multiple values. We are releasing the 'a' key here.
+    'x':0, #The x coordinate of the pad we are assigning this function to.
+    'y':8, #The y coordinate of the pad we are assigning this function to.
+    'r':256, # The red RGB value of the pad.
+    'g':0, # The green RGB value of the pad.
+    'b':0 # The blue RGB value of the pad.
 })
 ```
 
