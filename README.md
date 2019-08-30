@@ -44,17 +44,17 @@ layout.append({
 
 Not all of the data is required. For instance a pad can have only a release function and no press function which would essentially make it a one-shot. 
 ```python
-	'name': #REQUIRED
-	'oneShot':#REQUIRED
-	'press': #OPTIONAL
-	'release': #OPTIONAL
-	'p_arg': #OPTIONAL
-	'r_arg': #OPTIONAL
-	'x': #REQUIRED
-	'y': #REQUIRED
-	'r': #REQUIRED
-	'g': #REQUIRED
-	'b': #REQUIRED
+'name': #REQUIRED
+'oneShot':#REQUIRED
+'press': #OPTIONAL
+'release': #OPTIONAL
+'p_arg': #OPTIONAL
+'r_arg': #OPTIONAL
+'x': #REQUIRED
+'y': #REQUIRED
+'r': #REQUIRED
+'g': #REQUIRED
+'b': #REQUIRED
 ```
 There are some core functions provided by this software that can help you get started with writing your own custom layouts. These are basically just wrappers around the ```keyboard``` and ```playsound``` library. You can check them out simply by browsing the ```core/functions.py``` file. 
 
