@@ -1,4 +1,4 @@
-# LaunchBoard.py
+# HackPad
 Use your Novation Launchpad for whatever you can imagine. This essentially turns your device into a 9x9 RGB macro keyboard.
 
 **README NEEDS UPDATE**
