@@ -3,6 +3,8 @@ Use your Novation Launchpad for whatever you can imagine. This essentially turns
 
 Based on [```launchpad_py```](https://github.com/FMMT666/launchpad.py) so this should cover any model available (in theory) but I only have access to an mkII. 
 
+**Inspired by [LPHK](https://github.com/nimaid/LPHK) which is an amazing project, that you may very well find more useful than this. I only wrote this because I prefer to regular python for the pad actions and do not really need a GUI.**
+
 ## Setup
 ```bash
 pip install launchpad_py
